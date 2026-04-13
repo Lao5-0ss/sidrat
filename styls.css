@@ -1,0 +1,183 @@
+:root {
+  --bg: #06131c;
+  --panel: rgba(8, 31, 43, 0.82);
+  --text: #f4fbff;
+  --muted: #a7c0cd;
+  --line: rgba(151, 214, 194, 0.24);
+  --accent: #7df0b4;
+  --accent-strong: #26c281;
+  --glow: rgba(125, 240, 180, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(38, 194, 129, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(56, 120, 255, 0.22), transparent 30%),
+    linear-gradient(135deg, #06131c 0%, #081d29 45%, #031018 100%);
+}
+
+.hero,
+.features {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  padding: 72px 0 40px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  line-height: 0.94;
+}
+
+.lead {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(125, 240, 180, 0.6);
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  color: #062017;
+  box-shadow: 0 18px 44px var(--glow);
+  border: 0;
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-card,
+.features article {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
+}
+
+.hero-card {
+  padding: 26px;
+  border-radius: 28px;
+}
+
+.card-header,
+.ticker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status {
+  color: var(--accent);
+}
+
+.ticker {
+  margin-top: 28px;
+  font-size: 1.6rem;
+}
+
+.ticker strong {
+  font-size: 2.8rem;
+  letter-spacing: 0.08em;
+}
+
+.chart {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  height: 220px;
+  margin-top: 30px;
+}
+
+.chart span {
+  flex: 1;
+  border-radius: 18px 18px 4px 4px;
+  background: linear-gradient(180deg, var(--accent) 0%, rgba(125, 240, 180, 0.12) 100%);
+  box-shadow: 0 0 24px rgba(125, 240, 180, 0.16);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 10px 0 72px;
+}
+
+.features article {
+  padding: 24px;
+  border-radius: 22px;
+}
+
+.features h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.features p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .hero-card {
+    order: -1;
+  }
+}
